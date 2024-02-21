@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Type in director:");
         String director = input.nextLine();
 
-       // placing our two answers in the array
+       // placing the two answers in the array
         mc.addMovie(title, director);
     }
 }
