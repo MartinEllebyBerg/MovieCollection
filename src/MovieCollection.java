@@ -2,16 +2,17 @@ import java.util.ArrayList;
 
 public class MovieCollection {
 
-    // Attributes - Har lavet en arrayliste der bliver ved med at udvide sig når vi tilføjer film til (den er dynamisk)
-    private final ArrayList collection;
+    // Attributes
+    private final ArrayList<Movie> collection;
 
     // Constructor
     public MovieCollection() {
-        collection = new ArrayList();
+        collection = new ArrayList<Movie>();
     }
 
-    // Methods
-    public void addMovie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre) {
-        collection.add(new Movie(title, director, year, isInColor, lengthInMinutes, genre));
+    // Method
+    public void addMovie(Movie m) {
+        collection.add(m);
     }
-}
+
+    }
