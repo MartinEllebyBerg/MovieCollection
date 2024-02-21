@@ -38,11 +38,11 @@ public class Main {
 
                 System.out.println("Type in genre:");
                 String genre = input.next();
-                //NOGET JEG IKKE KAN HUSKE..
 
                 // Placing the two answers in the array
                 mc.addMovie(title, director, year, isInColor, lengthInMinutes, genre);
             }
+            else System.out.println("Not possible - pres 1 or 2");
         }
 
     }
