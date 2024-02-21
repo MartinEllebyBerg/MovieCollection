@@ -9,9 +9,13 @@ public class Movie {
     private String genre;
 
     // Constructor
-    public Movie(String title, String director) {
+    public Movie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre) {
         this.title = title;
         this.director = director;
+        this.year = year;
+        this.isInColor = isInColor;
+        this.lengthInMinutes = lengthInMinutes;
+        this.genre = genre;
     }
 
     // Getters

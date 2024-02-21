@@ -1,22 +1,17 @@
+import java.util.ArrayList;
+
 public class MovieCollection {
 
-    // Attributes
-    private final Movie[] collection;
-    private int cursor; // Lowest index with null element
+    // Attributes - Har lavet en arrayliste der bliver ved med at udvide sig når vi tilføjer film til (den er dynamisk)
+    private final ArrayList collection;
 
     // Constructor
-    public MovieCollection(int size) {
-        collection = new Movie[size];
-        cursor = 0;
+    public MovieCollection() {
+        collection = new ArrayList();
     }
 
     // Methods
-    public void addMovie(String title, String director) {
-        if (cursor < collection.length) {
-            collection[cursor++] = new Movie(title, director);
-            System.out.println("Movie added.");
-        } else {
-            System.out.println("Movie adding failed: Collection full.");
-        }
+    public void addMovie(String title, String director, int year, boolean isInColor, int lengthInMinutes, String genre) {
+        collection.add(new Movie(title, director, year, isInColor, lengthInMinutes, genre));
     }
 }
