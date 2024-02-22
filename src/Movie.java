@@ -19,10 +19,41 @@ public class Movie {
     }
 
     // Getters
-    public String getTitle() {return title;}
-    public String getDirector() {return director;}
-    public int getYear() {return year;}
-    public boolean getIsInColor() {return isInColor;}
-    public double getLengthInMinutes() {return lengthInMinutes;}
-    public String getGenre() {return genre;}
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public boolean getIsInColor() {
+        return isInColor;
+    }
+
+    public double getLengthInMinutes() {
+        return lengthInMinutes;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        result += "Title: " + title + "\n" + "Director: " + director + "\n" + "Year: " + year + "\n" + "Genre: " + genre + "\n" + "Runtime: " + lengthInMinutes + "\n";
+        if (isInColor == true) {
+            result += "Color: In color\n";
+        } else {
+            result += "Color: Black and White\n";
+        }
+
+        return result;
+
+    }
 }
