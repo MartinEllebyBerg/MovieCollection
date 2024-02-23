@@ -10,8 +10,9 @@ public class Main {
         int userChoice;
         boolean run = true;
 
+        System.out.println("Welcome to my Moviecollection!");
         while (run) {
-            System.out.println("Welcome to my Moviecollection\nChoose a number:");
+            System.out.println("Choose a number:");
             System.out.println("1. Add a movie");
             System.out.println("2. View entire moviecollection");
             System.out.println("3. Search after a movietitle");
@@ -47,7 +48,7 @@ public class Main {
                 System.out.println("Here is your moviecollection:");
                 System.out.println(controller.collection);
             }
-            else if (userChoice ==3) {
+            else if (userChoice == 3) {
                 System.out.println("Write in a searchword for the movietitle:");
                 System.out.println("\n" + controller.searchMovie(input.next()));
             }
