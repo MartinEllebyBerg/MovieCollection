@@ -9,10 +9,11 @@ class MovieCollectionTest {
         // Triple A Pattern
 
         //Arrange
-MovieCollection collection = new MovieCollection();
-collection.addMovie("The Postman", "Kevin Costner", 1997, true, 177, "Action");
+        MovieCollection collection = new MovieCollection();
+        collection.addMovie("The Postman", "Kevin Costner", 1997, true, 177, "Action");
 
         //Act
 
         //Assert
     }
+}
