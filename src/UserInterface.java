@@ -2,16 +2,32 @@ import java.util.Scanner;
 
 //I denne klasse kører vi alt der tidligere lå i vores Main i metoden startProgram for at gøre det nemmere for forbrugeren
 public class UserInterface {
-    // Scanner input
-    Scanner input = new Scanner(System.in);
-    Controller controller = new Controller();
 
+    // Attribtus
+    private Controller controller;
+    private Scanner input;
+    private boolean running;
+
+
+    // Konstruktør
+    public UserInterface() {
+        input = new Scanner(System.in);
+        controller = new Controller();
+
+        //Hardkode til hurtig brugertest af tilføjet film
+        controller.addMovie("Avatar", "James Cameron", 2009, true, 162, "Action");
+        controller.addMovie("Avatar: The Way of Water", "James Cameron", 2022, true, 192, "Action");
+        controller.addMovie("Love Actually", "Richard Curtis", 2003, true, 135, "Comedy");
+        controller.addMovie("Harry Potter and the Prisoner of Azkaban", "Alfonso Cuarón", 2004, true, 142, "Adventure");
+    }
 
     public void startProgram() {
-        while (true) {
+        running = true;
+        System.out.println("Welcome to my Moviecollection!");
+        while (running) {
             int userChoice = printWelcome();
-           if (userChoice == 1) {
-               // Her kalder jeg en metoden makeMovie i stedet for at havde skrevet hele koden i formlen
+            if (userChoice == 1) {
+                // Her kalder jeg en metoden makeMovie i stedet for at havde skrevet hele koden i formlen
                 makeMovie();
             } else if (userChoice == 2) {
                 printMovieCollection();
@@ -25,17 +41,18 @@ public class UserInterface {
             }
         }
     }
-    public int printWelcome(){
-        System.out.println("Welcome to my Moviecollection!");
+
+    public int printWelcome() {
         System.out.println("Choose a number:");
         System.out.println("1. Add a movie");
         System.out.println("2. View entire moviecollection");
         System.out.println("3. Search after a movietitle");
         System.out.println("4. Disconnect");
         int userChoice = input.nextInt();
-            return userChoice;
+        return userChoice;
     }
-    public void makeMovie(){
+
+    public void makeMovie() {
         System.out.print("Type in title:");
         input.nextLine();
         String title = input.nextLine();
@@ -60,15 +77,18 @@ public class UserInterface {
         controller.addMovie(title, director, year, isInColor, lengthInMinutes, genre);
         System.out.println("The movie '" + title + "' is added to your collection\n");
     }
+
     public void printMovieCollection() {
         System.out.println("Here is your moviecollection:");
         System.out.println(controller.collection);
     }
-    public void searchATitle(){
+
+    public void searchATitle() {
         System.out.println("Write in a searchword for the movietitle:");
         System.out.println("\n" + controller.searchMovie(input.next()));
-       }
-    public void disconnectProgram(){
+    }
+
+    public void disconnectProgram() {
         System.out.println("Disconnected");
-       }
+    }
 }

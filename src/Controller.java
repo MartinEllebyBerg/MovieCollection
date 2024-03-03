@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Controller {
 
     // ATTRIBUTTEN er collection som er et objekt af MovieCollection. 'collection' vil herefter indeholde de film vi tilføjer.
-   MovieCollection collection;
+    MovieCollection collection;
 
     // KONSTRUKTØREN initialiserer 'collection' som er et objekt af MovieCollection ved at oprette en ny instans af MovieCollection.
     // Dette sikrer at hver controllerobjekt har en ny samling af film
@@ -31,6 +31,6 @@ public class Controller {
 
     // METODE: Denne metode returnerer en strengrepræsentation ved at kalde toString metoden på 'collection'-objektet
     public String getMovieCollectionAsString() {
-    return "---MovieCollection begins---\n" + collection + "\n---MovieCollection ends---";
+        return "---MovieCollection begins---\n" + collection + "\n---MovieCollection ends---";
     }
 }
