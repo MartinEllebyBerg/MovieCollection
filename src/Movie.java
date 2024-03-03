@@ -21,11 +21,13 @@ public class Movie {
 
     // GETTER giver adgang til værdigerne af attributterne
     public String getTitle() {return title;}
+    /* Vi bruger ikke disse getter metoder
     public String getDirector() {return director;}
     public int getYear() {return year;}
     public boolean getIsInColor() {return isInColor;}
     public int getLengthInMinutes() {return lengthInMinutes;}
     public String getGenre() {return genre;}
+    */
 
     @Override
     // METODE: toString findes i alle objekter, da den er arvet fra klassen 'Objekt' og konverterer objektets tilstand til en streng.

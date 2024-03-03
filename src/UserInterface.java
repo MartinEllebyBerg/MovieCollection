@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //I denne klasse kører vi alt der tidligere lå i vores Main i metoden startProgram for at gøre det nemmere for forbrugeren
@@ -61,14 +62,14 @@ public class UserInterface {
         String director = input.nextLine();
 
         System.out.print("Type in year:");
-        int year = input.nextInt();
+        int year = scanIntSafelyYear();
 
         System.out.print("Is it in color? (yes or no)");
         String color = input.next();
         boolean isInColor = color.equals("yes");
 
         System.out.print("Type in length in minutes:");
-        int lengthInMinutes = input.nextInt();
+        int lengthInMinutes = scanIntSafelyLengthInMinutes();
 
         System.out.print("Type in genre:");
         input.nextLine();
@@ -90,5 +91,25 @@ public class UserInterface {
 
     public void disconnectProgram() {
         System.out.println("Disconnected");
+    }
+
+    private int scanIntSafelyYear() { //Metode til at fange hvis man skriver et bogstav i en int scanner, der ellers vil melde en fejl
+        try {
+            return input.nextInt(); // Her tester den om der bliver tastet en int ind i scanneren
+        } catch (InputMismatchException ime) {
+            input.nextLine(); // Scanneren skal lige forstå, at den nu skal være klar til at læse på en ny linje
+            System.out.println("Indtastede var ikke et tal - prøv igen herunder:");
+            return scanIntSafelyYear(); // Rekursion: Metoden kalder sig selv, og starter dermed forfra med et nyt try!
+        }
+    }
+
+    private int scanIntSafelyLengthInMinutes() { // Se forklaring på int-metode over
+        try {
+            return input.nextInt();
+        } catch (InputMismatchException ime) {
+            input.nextLine();
+            System.out.println("Indtastede var ikke et tal - prøv igen herunder:");
+            return scanIntSafelyLengthInMinutes();
+        }
     }
 }
